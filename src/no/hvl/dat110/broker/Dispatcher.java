@@ -179,6 +179,7 @@ public class Dispatcher extends Stopable {
 		String topic = msg.getTopic();
 		Set<String> subs = storage.subscriptions.get(topic);
 		Collection<ClientSession> clients = storage.getSessions();
+		
 		for (ClientSession cs : clients) {
 			String user = cs.getUser();
 			if (subs.contains(user)) {
