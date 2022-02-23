@@ -23,7 +23,4 @@ public class DeleteTopicMsg extends Message {
 	public String toString() {
 		return "DeleteTopicMsg [topic=" + topic + ", type=" + getType() + ", user=" + getUser() + "]";
 	}
-
-	
-	
 }

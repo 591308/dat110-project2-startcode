@@ -66,8 +66,9 @@ public class Storage {
 
 		// TODO: add corresponding client session to the storage
 		// See ClientSession class
-		
+		offlineMessageBuffer.put(user, new ArrayList<Message>());
 		clients.put(user, new ClientSession(user, connection));
+		
 		
 	}
 

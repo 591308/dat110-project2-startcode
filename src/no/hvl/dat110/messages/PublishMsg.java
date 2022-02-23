@@ -17,8 +17,8 @@ public class PublishMsg extends Message {
 	public PublishMsg(String user, String topic, String message) {
 		// TODO Auto-generated constructor stub
 		super(MessageType.PUBLISH, user);
-		this.setMessage(message);
-		this.setTopic(topic);
+		this.message = message;
+		this.topic = topic;
 	}
 
 	public String getMessage() {

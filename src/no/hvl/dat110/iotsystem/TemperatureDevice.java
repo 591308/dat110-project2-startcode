@@ -20,6 +20,7 @@ public class TemperatureDevice {
 		client.connect();
 		// - publish the temperature(s)
 		for(int i = 0; i < COUNT; i++) {
+			
 			int temp = sn.read();
 			client.publish(Common.TEMPTOPIC, "Temperaturen er " + temp + " Celsius");
 			

@@ -92,9 +92,13 @@ public class Dispatcher extends Stopable {
 
 		Logger.log("onConnect:" + msg.toString());
 
+		
 		if (storage.getMessageBuffer(user) == null) {
+			
 			storage.addClientSession(user, connection);
+			
 		} else {
+			
 			storage.reconnectUser(user, connection);
 			ArrayList<Message> offlineMsgs = storage.getMessageBuffer(user);
 
@@ -112,6 +116,8 @@ public class Dispatcher extends Stopable {
 		String user = msg.getUser();
 
 		Logger.log("onDisconnect:" + msg.toString());
+		
+		storage.disconnectUser(user);
 		
 		storage.offlineMessageBuffer.put(user, new ArrayList<Message>());
 
